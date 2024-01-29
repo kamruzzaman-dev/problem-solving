@@ -47,28 +47,28 @@ function doubleLoyaltyPoints(customersArray) {
 
 //! question-03: Create an array of objects representing products with 'name', 'price', and 'category' properties. Write a function to sort the array first by 'category' in ascending order and then by 'price' in descending order within each category.
 
-// const products = [
-//   { name: "Laptop", price: 1200, category: "Electronics" },
-//   { name: "Headphones", price: 100, category: "Electronics" },
-//   { name: "T-shirt", price: 20, category: "Clothing" },
-//   { name: "Watch", price: 150, category: "Accessories" },
-//   { name: "Smartphone", price: 800, category: "Electronics" },
-//   { name: "Jeans", price: 50, category: "Clothing" },
-// ];
+const products = [
+  { name: "Laptop", price: 1200, category: "Electronics" },
+  { name: "Headphones", price: 100, category: "Electronics" },
+  { name: "T-shirt", price: 20, category: "Clothing" },
+  { name: "Watch", price: 150, category: "Accessories" },
+  { name: "Smartphone", price: 800, category: "Electronics" },
+  { name: "Jeans", price: 50, category: "Clothing" },
+];
 
-// function compare(a, b) {
-//   if (a.category < b.category) {
-//     return 1;
-//   }
-//   if (a.category > b.category) {
-//     return -1;
-//   }
-//   return 0;
-// }
+function compare(a, b) {
+  if (a.category < b.category) {
+    return 1;
+  }
+  if (a.category > b.category) {
+    return -1;
+  }
+  return 0;
+}
 
-// const categorySort = [...products].sort(compare);
-// const arr2 = categorySort.sort((a, b) => a.price - b.price);
-// console.log(categorySort);
+const categorySort = [...products].sort(compare);
+const arr2 = categorySort.sort((a, b) => a.price - b.price);
+console.log(categorySort);
 
 
 
@@ -103,45 +103,45 @@ function doubleLoyaltyPoints(customersArray) {
 // console.log(sortedProducts);
 
 // //! Ques 04: find out unique from both array
-// function findUniqueElements(array1, array2) {
-//   const uniqueElements = [];
+function findUniqueElements(array1, array2) {
+  const uniqueElements = [];
 
-//   // array1
-//   for (const element of array1) {
-//     // O(n^2)
-//     if (!array2.includes(element)) {
-//       uniqueElements.push(element);
-//     }
-//   }
+  // array1
+  for (const element of array1) {
+    // O(n^2)
+    if (!array2.includes(element)) {
+      uniqueElements.push(element);
+    }
+  }
 
-//   //array2
-//   for (const element of array2) {
-//     //O(n^2)
-//     if (!array1.includes(element)) {
-//       uniqueElements.push(element);
-//     }
-//   }
+  //array2
+  for (const element of array2) {
+    //O(n^2)
+    if (!array1.includes(element)) {
+      uniqueElements.push(element);
+    }
+  }
 
-//   return uniqueElements;
-// }
+  return uniqueElements;
+}
 
-// const array1 = [1, 2, 3, 4, 5];
-// const array2 = [3, 4, 5, 6, 7];
+const array1 = [1, 2, 3, 4, 5];
+const array2 = [3, 4, 5, 6, 7];
 
-// const result = findUniqueElements(array1, array2);
+const result = findUniqueElements(array1, array2);
 
-// console.log(result); // Output: [1, 2, 6, 7]
+console.log(result); // Output: [1, 2, 6, 7]
 
-// // ! explain it
+// ! explain it
 
-// function mysteryFunctionX(limitX) {
-//   const sequenceX = [1];
-//   for (let x = 1; x <= limitX; x++) {
-//     sequenceX[x] = x * sequenceX[x - 1];
-//   }
-//   return sequenceX;
-// }
+function mysteryFunctionX(limitX) {
+  const sequenceX = [1];
+  for (let x = 1; x <= limitX; x++) {
+    sequenceX[x] = x * sequenceX[x - 1];
+  }
+  return sequenceX;
+}
 
-// const mysteriousNumberX = 5;
-// console.log(mysteryFunctionX(mysteriousNumberX));
+const mysteriousNumberX = 5;
+console.log(mysteryFunctionX(mysteriousNumberX));
 // // Output: [1, 1, 2, 6, 24, 120]
