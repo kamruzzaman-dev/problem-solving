@@ -65,9 +65,59 @@ console.log("Maximum value:", maxValue);
 
 // 6 Task: Advanced Sorting
 // Create an array of objects representing students with 'name' and 'grades' properties. Write a function to sort the students by average grade in descending order.
+const students = [
+  { name: 'zaman', grades: [67, 43, 45] },
+  { name: 'manik', grades: [32, 97, 77] },
+  { name: 'pias', grades: [94, 45, 45] },
+];
+
+const averageGrades = (grades) => {
+  const sum = grades.reduce((acc, grade) => acc + grade, 0);
+  return sum / grades.length;
+};
+
+const sortStudentsByAverageGrade = (studentsArray) => {
+  return studentsArray.sort((a, b) => {
+    const avgA = averageGrades(a.grades);
+    const avgB = averageGrades(b.grades);
+
+    return avgB - avgA;
+  });
+};
+
+const sortedStudents = sortStudentsByAverageGrade(students);
+console.log(sortedStudents);
+
 
 // 7 Task: Functional Programming - Reduce
 // Write a function that uses the reduce function to calculate the total value of an array of objects with a 'quantity' and 'price' property.interview
 
+
+const calculateTotalValue = (items) => {
+  return items.reduce((total, item) => {
+    const itemValue = item.quantity * item.price;
+    return total + itemValue;
+  }, 0);
+};
+
+const items = [
+  { quantity: 7, price: 98 },
+  { quantity: 4, price: 66 },
+  { quantity: 8, price: 33 },
+];
+
+console.log('Total:', calculateTotalValue(items));
+
+
 // 8 Task: Array Intersection
 // Write a function that takes two arrays and returns a new array containing only the elements that appear in both arrays.
+
+function findCommonElements(arr1, arr2) {
+  return arr1.filter(element => arr2.includes(element));
+}
+
+// Example usage:
+const arr1 = [1, 2, 3, 4, 5];
+const arr2 = [3, 4, 5, 6, 7];
+
+console.log('Common Elements:', findCommonElements(array1, array2));
